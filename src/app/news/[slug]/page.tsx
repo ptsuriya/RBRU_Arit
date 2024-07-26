@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import axios, { AxiosResponse } from "axios";
+import { newDemoData } from "@/utils/demoData"
 import { Pagination } from 'react-bootstrap';
 import Link from "next/link";
 import Image from "next/image";
@@ -22,7 +23,7 @@ interface NewsJsonType1Subtype1 {
 }
 
 function NewFetch({ params }: { params: { slug: string } }) {
-  const [newList, setNewList] = useState<NewsJsonType1Subtype1[]>([]);
+  const [newList, setNewList] = useState<NewsJsonType1Subtype1[]>(newDemoData)
   const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {

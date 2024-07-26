@@ -6,7 +6,7 @@ import Newsfirstpage from "@/component/Newsfirstpage"
 export default function Home() {
   return (
     <>
-    <Newsfirstpage/>
+      <Newsfirstpage />
     </>
   );
 }

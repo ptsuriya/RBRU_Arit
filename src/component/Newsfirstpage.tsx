@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import axios, { AxiosResponse } from "axios"
 import { Pagination } from "react-bootstrap"
 import { newDemoData } from "../utils/demoData"
+import Link from "next/link"
 
 export interface NewsJsonType1Subtype1 {
   no: string
@@ -89,7 +90,7 @@ function NewFetch() {
         .slice((pageNumber - 1) * perpage, pageNumber * perpage)
         .map((value, index) => (
           <div key={index}>
-            <h3>{customDecode(value.headline)}</h3> {/* Using custom decode */}
+            <Link href={`/news/${value.no}`}>{customDecode(value.headline)}</Link> {/* Using custom decode */} {/* Using custom decode */}
           </div>
         ))}
 

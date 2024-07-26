@@ -21,13 +21,13 @@ function NewFetch() {
         res.error;
       });
   };
-  
+
   useEffect(() => {
     fetchNews();
   }, []);
 
   return (
-  <div>NewFetch</div>
+    <div>NewFetch</div>
   );
 }
 
