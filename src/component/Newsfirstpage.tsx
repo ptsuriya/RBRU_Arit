@@ -39,8 +39,8 @@ function NewFetch() {
     fetchNews()
   }, [])
 
-  const perpage = 6
-  const totalpagenum = Math.ceil(newList.length / perpage)
+  const perPage = 6
+  const totalpagenum = Math.ceil(newList.length / perPage)
 
   const handleNextClick = () => {
     if (pageNumber < totalpagenum) {
@@ -86,10 +86,14 @@ function NewFetch() {
   return (
     <>
       {newList
-        .slice((pageNumber - 1) * perpage, pageNumber * perpage)
+        .slice((pageNumber - 1) * perPage, pageNumber * perPage)
         .map((value, index) => (
           <div key={index}>
-            <h3>{customDecode(value.headline)}</h3> {/* Using custom decode */}
+            <h3
+              dangerouslySetInnerHTML={{
+                __html: value.headline,
+              }}
+            ></h3>
           </div>
         ))}
 
