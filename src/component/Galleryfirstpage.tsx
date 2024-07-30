@@ -1,20 +1,20 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import axios, { AxiosResponse } from "axios"
-import { Pagination } from "react-bootstrap"
-import { newDemoData } from "../utils/demoData"
-import Link from "next/link"
-import Paginations from "@/component/Paginations"
-
-import customDecode from "@/utils/htmlDecoder"
+import { useState, useEffect } from "react";
+import axios, { AxiosResponse } from "axios";
+import { Pagination } from "react-bootstrap";
+import { newDemoData } from "../utils/demoData";
+import Link from "next/link";
+import Paginations from "@/component/Paginations";
+import customDecode from "@/utils/htmlDecoder";
+import parse from 'html-react-parser';
 
 export interface NewsJsonType1Subtype1 {
   no: string
   org_no: string
   type: string
   sub_type: string
-  headline: string
+  topic: string
   detail: string
   headline_en: string
   detail_en: string
@@ -33,7 +33,7 @@ function NewFetch() {
     const fetchNews = async () => {
       try {
         const res: AxiosResponse<NewsJsonType1Subtype1[]> = await axios.get(
-          "https://news.rbru.ac.th/newsrb_json/news_json.php?table=news_aritc&count=30&type=1&sub_type=1",
+          "https://news.rbru.ac.th/newsrb_json/gallery_json.php?limitImg=10",
         )
         setNewList(res.data)
       } catch (error) {
@@ -56,8 +56,9 @@ function NewFetch() {
         .slice((pageNumber - 1) * perpage, pageNumber * perpage)
         .map((value, index) => (
           <div key={index}>
-            <Link href={`/news/${value.no}`}>{customDecode(value.headline)}</Link> {/* Using custom decode */} {/* Using custom decode */}
-          
+            <Link href={`/gallery/${value.no}`}>{parse(customDecode(value.topic))}</Link> {/* Using custom decode */} {/* Using custom decode */}
+            
+            
           </div>
         ))}
 

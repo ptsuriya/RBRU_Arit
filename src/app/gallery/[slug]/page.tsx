@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react"
 import axios, { AxiosResponse } from "axios"
 //import { newDemoData } from "@/utils/demoData"
-import { Pagination } from "react-bootstrap"
 import Link from "next/link"
 import Image from "next/image"
 import parse from 'html-react-parser';
@@ -14,7 +13,7 @@ interface NewsJsonType1Subtype1 {
   org_no: string
   type: string
   sub_type: string
-  headline: string
+  topic: string
   detail: string
   headline_en: string
   detail_en: string
@@ -24,16 +23,23 @@ interface NewsJsonType1Subtype1 {
   url: string
 }
 
+
+interface GalJson {
+  no_activity: string
+  name_photo: string
+}
+
 function NewFetch({ params }: { params: { slug: string } }) {
   //const [newList, setNewList] = useState<NewsJsonType1Subtype1[]>(newDemoData)
   const [newList, setNewList] = useState<NewsJsonType1Subtype1[]>([])
-  const [pageNumber, setPageNumber] = useState(1)
+  const [galList, setGalList] = useState<GalJson[]>([]);
+
 
   useEffect(() => {
     const fetchNews = async () => {
       try {
         const res: AxiosResponse<NewsJsonType1Subtype1[]> = await axios.get(
-          "https://news.rbru.ac.th/newsrb_json/news_json.php?table=news_aritc&count=30&type=1&sub_type=1"
+          "https://news.rbru.ac.th/newsrb_json/gallery_json.php?limitImg=10"
         );
         setNewList(res.data);
       } catch (error) {
@@ -41,8 +47,21 @@ function NewFetch({ params }: { params: { slug: string } }) {
       }
     }
     fetchNews()
-  }, [])
+  }, []);
 
+  useEffect(() => {
+    const fetchGal = async () => {
+      try {
+        const resg: AxiosResponse<GalJson[]> = await axios.get(
+          `https://news.rbru.ac.th/newsrb_json/img_json.php?no=${params.slug}`
+        );
+        setGalList(resg.data);
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    fetchGal()
+  }, [])
 
   return (
     <>
@@ -50,11 +69,20 @@ function NewFetch({ params }: { params: { slug: string } }) {
         ?.filter((value) => value.no === params.slug)
         .map((value, index) => (
           <div key={index}>
-            <h1>{parse(customDecode(value.headline))}</h1>
+            <h1>{parse(customDecode(value.topic))}</h1>
             <h3>{parse(customDecode(value.detail))}</h3>
-            <div></div>
+            <div>
+            </div>
           </div>
         ))}
+
+      {galList.map((datas,idx) =>(
+        <div key={idx}>
+          <img src={datas.name_photo} alt="" />
+        </div>
+      ))}
+
+
     </>
   )
 }

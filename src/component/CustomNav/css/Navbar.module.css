@@ -1,0 +1,33 @@
+.navMenu {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.about,
+.study {
+  margin-right: 20px;
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.show {
+  display: block;
+}
+
+.dropdownAbout {
+  background-color: #f0f0f0;
+}
+
+.dropdownStudy {
+  background-color: #e0e0e0;
+}
