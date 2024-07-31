@@ -47,11 +47,10 @@
 
 .logo {
   position: relative;
-  width: 220px;
-  height: 65px;
+
   top: -7px;
 
-  background: url(../img/logo.svg) 100% / cover no-repeat;
+  background: url(../img/logo.png) 100% / cover no-repeat;
 }
 
 /*--------------------------------------------------------------
@@ -62,15 +61,15 @@
 	Start Header CSS 
 =====================*/
 .header {
-  background-color: #fff5fb;
-  position: relative;
+  background-color: #4BAEA0;
+
 }
 .header .navbar-collapse {
   padding: 0;
 }
 /* Topbar */
 .header .topbar {
-  background-color: #ffe4f6;
+
   border-bottom: 1px solid #eee;
 }
 .topbar ul {
@@ -156,23 +155,29 @@
 }
 
 .header .header-inner {
-  background: #fff5fb;
+
   z-index: 999;
-  width: 100%;
+  width: 100dvw!important;
 }
 
 
+
+
 .header .navbar {
+
   background: none;
   box-shadow: none;
   border: none;
   margin: 0;
   height: 100%;
   min-height: 0px;
+  width: 100dvw;
 }
 
 /* Header Sticky */
 .header.sticky .header-inner {
+  background-color: #4BAEA0;
+  width: 100dvw;
   position: fixed;
   z-index: 999;
   top: 0;
@@ -304,30 +309,33 @@
 .dropdowns:hover .dropbtn {
 }
 
-.logo {
-  width: 220px;
-}
+
 
 .content {
-  position: absolute;
-  display: flex;
-  padding: 2dvh 3dvw 1dvw 3dvh;
-  justify-content: space-around;
   min-height: 50dvh;
   width: 100dvw;
   background-color: #ede2ef;
   z-index: 1;
   overflow-x: hidden;
 }
+
 .con {
+
   width: 30%;
-  padding-left: 5%;
+
 }
 .con li {
   list-style-type: none;
   margin-top: 15px;
 }
+.con li {
+  
+  list-style-type: none;
+  margin-top: 15px;
+}
+
 #tent {
+  padding: 0 2%;
   border-left: solid #9c0057;
   border-right: solid #9c0057;
 }
@@ -340,7 +348,7 @@
   margin-top: 10px;
 }
 
-.nav-drop h3 {
+.nav-drop h4,h5 {
   margin-top: 20px;
   color: #9c0057;
 }
@@ -569,18 +577,18 @@
 }
 .btn-light {
   border-radius: 0;
-  --bs-btn-color: #2c2d3f;
-  --bs-btn-bg: #fff6fb;
-  --bs-btn-border-color: #fff6fb;
-  --bs-btn-hover-color: #9c0057;
-  --bs-btn-hover-bg: #ede2ef;
-  --bs-btn-hover-border-color: #ede2ef;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #4baea0;
+  --bs-btn-border-color: #4baea0;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #00796d;
+  --bs-btn-hover-border-color: #00796d;
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
-  --bs-btn-active-color: #fff6fb;
-  --bs-btn-active-bg: #742e4e;
-  --bs-btn-active-border-color: #742e4e;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #00642f;
+  --bs-btn-active-border-color: #00642f;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff6fb;
-  --bs-btn-disabled-bg: #bc1c43;
-  --bs-btn-disabled-border-color: #bc1c43;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #e8fefa;
+  --bs-btn-disabled-border-color: #e8fefa;
 }
