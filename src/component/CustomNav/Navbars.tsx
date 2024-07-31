@@ -72,15 +72,18 @@ const Navbars = () => {
 															<ul>
 																<li><Link href="">RBRUMOOC</Link></li>
 																<li><Link href="">หลักสูตรอบรมสำหรับบุคลากรขั้นพื้นฐาน</Link></li>
-															</ul></li>
+															</ul>
+														</li>
 														<li><h5>หอสมุดกลาง</h5>
 															<ul>
 																<li><Link href="">สถิติการใช้บริการหอสมุดกลาง</Link></li>
-															</ul></li>
+															</ul>
+														</li>
 														<li><h5>งานบริหารงานทั่วไป</h5>
 															<ul>
 																<li><Link href="">สถิติการใช้บริการห้อง</Link></li>
-															</ul></li>
+															</ul>
+														</li>
 													</ul>
 												</li>
 											</ul>
