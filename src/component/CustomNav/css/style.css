@@ -177,6 +177,7 @@
 /* Header Sticky */
 .header.sticky .header-inner {
   background-color: #4BAEA0;
+  height: 250px;
   width: 100dvw;
   position: fixed;
   z-index: 999;
