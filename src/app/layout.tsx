@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
-import "bootstrap/dist/css/bootstrap.min.css"; 
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
-import Navbars from "@/component/CustomNav/Navbars"
+import Navbars from "../component/CustomNav/Navbars"
 import ScrollObserver, { ScrollContext } from "@/utils/Scroll-observer"
 
 

@@ -3,10 +3,9 @@
 import { useState, useEffect } from "react";
 import axios, { AxiosResponse } from "axios";
 import { Pagination } from "react-bootstrap";
-import { newDemoData } from "../utils/demoData";
 import Link from "next/link";
-import Paginations from "@/component/Paginations";
-import customDecode from "@/utils/htmlDecoder";
+import CutomPaginations from "../component/CutomPaginations";
+import CustomDecode from "../utils/htmlDecoder";
 import parse from 'html-react-parser';
 
 export interface NewsJsonType1Subtype1 {
@@ -56,13 +55,13 @@ function NewFetch() {
         .slice((pageNumber - 1) * perpage, pageNumber * perpage)
         .map((value, index) => (
           <div key={index}>
-            <Link href={`/gallery/${value.no}`}>{parse(customDecode(value.topic))}</Link> {/* Using custom decode */} {/* Using custom decode */}
+            <Link href={`/gallery/${value.no}`}>{parse(CustomDecode(value.topic))}</Link> {/* Using custom decode */} {/* Using custom decode */}
             
             
           </div>
         ))}
 
-      <Paginations
+      <CutomPaginations
         totalPages={totalpagenum}
         currentPage={pageNumber}
         onPageChange={handlePageChange}

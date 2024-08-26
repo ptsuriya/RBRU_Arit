@@ -6,7 +6,7 @@ import axios, { AxiosResponse } from "axios"
 import Link from "next/link"
 import Image from "next/image"
 import parse from 'html-react-parser';
-import customDecode from "@/utils/htmlDecoder"
+import CustomDecode from "../../../utils/htmlDecoder"
 
 interface NewsJsonType1Subtype1 {
   no: string
@@ -69,8 +69,8 @@ function NewFetch({ params }: { params: { slug: string } }) {
         ?.filter((value) => value.no === params.slug)
         .map((value, index) => (
           <div key={index}>
-            <h1>{parse(customDecode(value.topic))}</h1>
-            <h3>{parse(customDecode(value.detail))}</h3>
+            <h1>{parse(CustomDecode(value.topic))}</h1>
+            <h3>{parse(CustomDecode(value.detail))}</h3>
             <div>
             </div>
           </div>

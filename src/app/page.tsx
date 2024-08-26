@@ -1,15 +1,14 @@
 
 import Image from "next/image";
-import Newsfirstpage from "@/component/Newsfirstpage";
-import Galleryfirstpage from "@/component/Galleryfirstpage";
+import NewsPages from "../component/NewsFirstPage";
+import GalleryPages from "../component/GalleryFirstPage";
 
 
 export default function Home() {
   return (
     <>
-      <Newsfirstpage />
-      <Galleryfirstpage/>
-      
+      <NewsPages />
+      <GalleryPages />
     </>
   );
 }

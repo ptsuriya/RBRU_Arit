@@ -5,8 +5,8 @@ import axios, { AxiosResponse } from "axios";
 import { Pagination } from "react-bootstrap";
 //import { newDemoData } from "../utils/demoData";
 import Link from "next/link";
-import Paginations from "@/component/Paginations";
-import customDecode from "@/utils/htmlDecoder";
+import Paginations from "../../component/CutomPaginations";
+import customDecode from "../../utils/htmlDecoder";
 import parse from 'html-react-parser';
 
 export interface NewsJsonType1Subtype1 {
@@ -57,8 +57,6 @@ function NewFetch() {
         .map((value, index) => (
           <div key={index}>
             <Link href={`/gallery/${value.no}`}>{parse(customDecode(value.topic))}</Link> {/* Using custom decode */} {/* Using custom decode */}
-            
-            
           </div>
         ))}
 

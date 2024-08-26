@@ -4,9 +4,8 @@ import { useState, useEffect } from "react"
 import axios, { AxiosResponse } from "axios"
 //import { newDemoData } from "../utils/demoData"
 import Link from "next/link"
-import Paginations from "@/component/Paginations"
-
-import customDecode from "@/utils/htmlDecoder"
+import Paginations from "../../component/CutomPaginations";
+import customDecode from "../../utils/htmlDecoder";
 
 export interface NewsJsonType1Subtype1 {
   no: string
